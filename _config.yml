@@ -14,9 +14,9 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Siri's Blog   # the main title
+title: SIRI'S AIDE-MÉMOIRE    # the main title
 
-tagline:  aide-memoire for certifications # it will display as the sub-title
+tagline:  for certifications # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
 
