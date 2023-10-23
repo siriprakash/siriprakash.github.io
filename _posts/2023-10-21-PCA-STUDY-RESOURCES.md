@@ -1,7 +1,7 @@
 ---
 title: GCP PCA STUDY RESOURCES
 date: 2023-10-21
-categories: [GCP-PCA]
+categories: [GCP]
 tags: [studyresources]     
 ---
 
