@@ -12,7 +12,8 @@ tags: [studyresources]
 
 ●  DNS strategy (e.g., on-premises, Cloud DNS)
 
-https://cloud.google.com/dns/docs/overview
+[DNS overview](https://cloud.google.com/dns/docs/overview
+)
 
 https://cloud.google.com/dns/docs/zones/zones-overview
 
