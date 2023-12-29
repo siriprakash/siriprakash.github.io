@@ -4,17 +4,87 @@ date: 2023-10-21
 categories: [CKA]
 tags: [studyresources]     
 ---
-# ****Certified Kubernetes Administrator****
+# Certified Kubernetes Administrator
 
 ### **Storage—10%**
 
 **Understand storage classes, persistent volumes**
 
+Official Documentation 
+
+[https://kubernetes.io/docs/concepts/storage/storage-classes/](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+
+[https://kubernetes.io/docs/concepts/storage/persistent-volumes/](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
+Notes
+
+****Volumes:**** 
+
+Why do we need Volumes?
+
+files in a container are ephemeral(lost when the container crashes or is stopped)
+
+multiple containers are running in a pod need to share files. 
+
+mountPath: the destination inside the Pod where the volume gets mounted to.
+
+Types of Volumes:
+
+1. **cephfs**: allows an existing CephFS volume to be mounted into your pod
+    
+    volume is preserved but unmounted when the pod is removed.
+    
+    volume can be pre-populated with data, and that data can be shared between pods
+    
+2. ****configMap:**** used to inject configuration data into pods
+    
+    When referencing a ConfigMap, you provide the name of the ConfigMap in the volume and customize the path to use for a specific entry in the ConfigMap.
+    
+3. **emptyDir:** the volume is created when the Pod is assigned to a node. It is initially empty.
+    
+    When a Pod is removed from a node for any reason, the data is deleted permanently.
+    
+    ```jsx
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: emptydir-pod
+    spec:
+      containers:
+      - image: alpine
+        imagePullPolicy: IfNotPresent
+        name: emptydir-container
+        command: [    'sh', '-c', 'echo Hello! ; sleep 3600']
+        volumeMounts:
+        - mountPath: /demo
+          name: demo-volume
+      volumes:
+      - name: demo-volume
+        emptyDir: {}
+    ```
+    
+4. ****hostPath:**** mounts a file or directory from the host node's filesystem into your Pod
+    
+    used container that needs access to node-level system components
+    
+
 **Understand volume mode, access modes and reclaim policies for volumes**
+
+Official Documentation 
+
+[https://kubernetes.io/docs/concepts/storage/persistent-volumes/#volume-mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#volume-mode)
+
+[https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes)
+
+[https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaim-policy](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaim-policy)
 
 **Understand persistent volume claims primitive**
 
+[https://kubernetes.io/docs/concepts/storage/persistent-volumes/](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
 **Know how to configure applications with persistent storage**
+
+[https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)
 
 ### **Troubleshooting—30%**
 
@@ -46,7 +116,7 @@ tags: [studyresources]
 
 ### **Cluster Architecture, Installation & Configuration—25%**
 
-**Manage role based access control (RBAC)**
+**Manage role-based access control (RBAC)**
 
 **Use Kubeadm to install a basic cluster**
 
@@ -71,3 +141,5 @@ tags: [studyresources]
 **Know how to configure and use CoreDNS**
 
 **Choose an appropriate container network interface plugin**
+
+
