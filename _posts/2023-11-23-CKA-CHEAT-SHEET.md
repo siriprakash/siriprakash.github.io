@@ -1,5 +1,5 @@
 ---
-title: CKA STUDY RESOURCES
+title: CKA CHEAT SHEET
 date: 2023-11-23
 categories: [CKA]
 tags: [studyresources]     
