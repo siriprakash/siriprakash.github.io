@@ -18,7 +18,7 @@ Official Documentation
 
 Notes
 
-****Volumes:**** 
+**Volumes:** 
 
 Why do we need Volumes?
 
@@ -36,7 +36,7 @@ Types of Volumes:
     
     volume can be pre-populated with data, and that data can be shared between pods
     
-2. ****configMap:**** used to inject configuration data into pods
+2. **configMap:** used to inject configuration data into pods
     
     When referencing a ConfigMap, you provide the name of the ConfigMap in the volume and customize the path to use for a specific entry in the ConfigMap.
     
@@ -63,7 +63,7 @@ Types of Volumes:
         emptyDir: {}
     ```
     
-4. ****hostPath:**** mounts a file or directory from the host node's filesystem into your Pod
+4. **hostPath:** mounts a file or directory from the host node's filesystem into your Pod
     
     used container that needs access to node-level system components
     
