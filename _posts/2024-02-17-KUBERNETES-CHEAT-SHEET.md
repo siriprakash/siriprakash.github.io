@@ -1,7 +1,7 @@
 ---
 title: KUBERNETES CHEAT SHEET
 date: 2024-02-17
-categories: [KUBERNETES][DEVNET][CKA]
+categories: [KUBERNETES, DEVNET, CKA]
 tags: [studyresources]     
 ---
 
