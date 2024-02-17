@@ -8,7 +8,6 @@ tags: [studyresources]
 # help & basic troubleshooting commands
 
 | kubectl - h  | help for kubectl |
-| --- | --- |
 | kubectl <command>  - - help  | Describe the command  |
 | kubectl explain <resource> | Describe fields and structure of various resources. |
 | alias k=kubectl
@@ -23,7 +22,6 @@ echo 'alias k=kubectl' >>~/.bashrc | Set an alias for kubectl command |
 # cluster info
 
 | kubectl config view | Show Merged kubeconfig settings. |
-| --- | --- |
 | kubectl cluster-info | Display addresses of the master and services |
 | kubectl get componentstatuses | Check cluster status |
 | kubectl cluster-info dump | Dump current cluster state to stdout |
@@ -33,7 +31,6 @@ echo 'alias k=kubectl' >>~/.bashrc | Set an alias for kubectl command |
 # creating objects
 
 | kubectl create -f <name_of_file> | Imperative approach. tells kubectl exactly what to do. Creates a new k8s resource in the cluster |
-| --- | --- |
 | kubectl apply -f <name_of_file> | Declarative approach. kubectl apply uses the provided spec to create a resource if it does not exist and update, i.e., patch, it if it does. |
 | kubectl replace -f <name_of_file> | Imperative approach. The kubectl replace completely replaces the existing resource with the one defined by the provided spec. |
 | kubectl delete -f <name_of_file> | Delete resources from a file |
@@ -41,7 +38,6 @@ echo 'alias k=kubectl' >>~/.bashrc | Set an alias for kubectl command |
 # node
 
 | kubectl get node | To lists all nodes in the cluster. Displays NAME, STATUS, ROLES, AGE & VERSION |
-| --- | --- |
 | kubectl get node -o wide | To lists all nodes in the cluster. Displays NAME, STATUS, ROLES, AGE, VERSION, INTERNAL-IP, EXTERNAL-IP, OS-IMAGE, KERNEL-VERSION & CONTAINER-RUNTIME |
 |  kubectl describe node <nodename> | To describe nod |
 | kubectl get node <nodename> -o yaml | To get the node in yaml output format |
@@ -56,7 +52,6 @@ echo 'alias k=kubectl' >>~/.bashrc | Set an alias for kubectl command |
 # pods
 
 | kubectl get pod | To list all pods in default namespace with basic info like NAME, READY, STATUS, RESTARTS, AGE |
-| --- | --- |
 | kubectl get pod -o wide  | To list all pods with additional info like IP, NODE, NOMINATED NODE, READINESS GATES |
 | kubectl get pod -A | To list all pods in the cluster across namespace |
 | kubectl describe pod | Gives a detailed description of the pod  |
@@ -69,20 +64,17 @@ echo 'alias k=kubectl' >>~/.bashrc | Set an alias for kubectl command |
 # resource utilization
 
 | kubectl top node <node_name> | allows us to see the resource consumption of the pod  |
-| --- | --- |
 | kubectl top pod <pod_name> | allows us to see the resource consumption of the node |
 
 # namespaces
 
 | kubectl get ns | list namespaces |
-| --- | --- |
 | kubectl get ns <namespace> -o yaml | provides namespace details in yaml format  |
 | kubectl describe ns <namespace>  | detailed description of a node with event details |
 
 # **resource management**
 
 | kubectl rollout history <resourceType>/<resourceName> | get rollout history |
-| --- | --- |
 | kubectl rollout undo <resourceType>/<resourceName> | undo the latest rollout |
 | kubectl rollout status -w <resourceType>/<resourceName> | get rollout status |
 | kubectl rollout restart <resourceType>/<resourceName> | Rolling restart of the resource  |
@@ -91,7 +83,6 @@ echo 'alias k=kubectl' >>~/.bashrc | Set an alias for kubectl command |
 # labels, taints and tolreations
 
 | kubectl label nodes <node-name> <label> | Add label to node |
-| --- | --- |
 | kubectl label node <nodename> <labelname>- | Remove label from node |
 | kubectl label pods <pod-name> <label-name> | Add label to a pod |
 | kubectl label pod <pod-name> {key1=value1,key2=value2,key3=value3} | Add multiple labels to a pod |
@@ -101,7 +92,6 @@ echo 'alias k=kubectl' >>~/.bashrc | Set an alias for kubectl command |
 # rbac
 
 | kubectl create role NAME --verb=verb --resource=resource.group/subresource [--resource-name=resourcename]  | Create role |
-| --- | --- |
 | kubectl create rolebinding NAME --clusterrole=NAME|--role=NAME [--user=username] [--group=groupname] [--serviceaccount=namespace:serviceaccountname]  | Create role-binding |
 | kubectl create serviceaccount NAME  | Create sa |
 | kubectl create clusterrole NAME --verb=verb --resource=resource.group [--resource-name=resourcename]  | Create cluster role |
